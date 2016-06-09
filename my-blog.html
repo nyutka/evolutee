@@ -36,7 +36,7 @@ permalink: /our-blog
 							<ul class="subside-list">
 								{% assign fli = forloop.index | minus: counter %}
 								{% for post in site.posts limit: counter offset: fli %} 
-									<li><a href="{{ post.url }}">{{ post.title }}</a>
+									<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
 								</li>
 								{% endfor %}
 							</ul>
