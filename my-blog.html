@@ -1,0 +1,73 @@
+---
+layout: default
+permalink: /our-blog
+---
+
+<section class="top-section">
+	<div class="container">
+		<h1>Evolving Blog</h1>
+	</div>
+</section>
+
+<div class="container two-columns">
+	<div id="content">
+		<div class="post-wrapp">
+			<a href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}" class="load-more"></a>
+		</div>
+	</div>
+
+	<aside id="sidebar">
+		<div class="aside-box">
+			<h3>Blog Archive</h3>
+			<div class="box-wrap">
+				<nav>
+					<h4>All Blog Posts</h4>
+
+					<ul class="side-list">
+					{% for post in site.posts %}
+						{% assign thisyear = post.date | date: "%B %Y" %}
+						{% assign prevyear = post.previous.date | date: "%B %Y" %}
+						{% assign counter = counter | plus: 1 %}
+
+						{% if thisyear != prevyear %}
+						<li class="archive"><a>{{ thisyear }}</a> <i class="fa fa-cube"></i>  
+						  [{{counter }}]</li>
+						<li>
+							<ul class="subside-list">
+								{% assign fli = forloop.index | minus: counter %}
+								{% for post in site.posts limit: counter offset: fli %} 
+									<li><a href="{{ post.url }}">{{ post.title }}</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</li> 
+						{% assign counter = 0 %}
+						{% endif %}
+					{% endfor %}
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="aside-box aside-box-add">
+			<h3>About the<br> Evolute Tech Blog</h3>
+			<div class="box-wrap">
+				<p>This is a Evolute blog focused on technology and technology issues. We'll share our perspectives, decisions and challenges regarding the software we build and use to create the Evolute service.</p>
+			</div>
+		</div>
+		<div class="aside-box">
+			<h3>Lables</h3>
+			<div class="box-wrap">
+				<nav>
+					<ul class="label-list">
+						{% assign tags = site.tags | sort %}
+						{% for tag in tags %}
+						<li>
+							<a href="{{ site.baseurl }}/tag/{{ tag | first | slugify }}/">{{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</aside>
+</div>

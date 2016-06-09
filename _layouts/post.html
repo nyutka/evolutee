@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<section class="top-section">
+	<div class="container">
+		<h1>{{ page.title }}</h1>
+	</div>
+</section>
+<div class="container two-columns">
+	<div class="row">
+		<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
+			<div class="post-wrapper">
+				<article class="post">
+					{{ content }}
+					<div>
+						{% if page.author %}
+						<p class="author">Author <span>{{ page.author }}</span></p>
+						{% endif %}
+						<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>

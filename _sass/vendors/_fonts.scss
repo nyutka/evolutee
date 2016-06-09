@@ -1,0 +1,60 @@
+/* ---------------------------------------------------------
+   1.Embedded fonts styles
+   ---------------------------------------------------------*/
+@font-face {
+  font-family: 'DIN';
+  src: url('../fonts/DIN Next W01 Condensed Regular.eot');
+  src: url('../fonts/DIN Next W01 Condensed Regular.woff2') format('woff2'),
+       url('../fonts/DIN Next W01 Condensed Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINN';
+  src: url('../fonts/DINNextW01-CondensedRegular.woff') format('woff'),
+       url('../fonts/DINNextW01-CondensedRegular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto-bold_2-webfont.woff') format('woff'),
+         url('../fonts/roboto-bold_2-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_condensed';
+    src: url('../fonts/robotocondensed-light_1-webfont.woff') format('woff'),
+         url('../fonts/robotocondensed-light_1-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto-light_2-webfont.woff') format('woff'),
+         url('../fonts/roboto-light_2-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto-regular_4-webfont.woff') format('woff'),
+         url('../fonts/roboto-regular_4-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto-black_2-webfont.woff') format('woff'),
+         url('../fonts/roboto-black_2-webfont.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+

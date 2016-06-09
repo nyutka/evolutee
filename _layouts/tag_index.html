@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<section class="top-section">
+  <div class="container">
+    <h1>{{page.title}}</h1>
+  </div>
+</section>
+
+<div class="container two-columns">
+  <div id="content">
+    <div class="post-wrapp">
+      
+      <article class="post">
+        <ul>
+          {% for post in site.posts %}
+            {% for tag in post.tags %}
+              {% if tag == page.tag %}
+                <li class="archive_list">
+                  <p class="date">{{ post.date | date_to_long_string | date: "%-d %b %Y" }}</p>
+                  <div class="purple-line"></div>
+                  <h2 class="entry-title"><a class="archive_list_article_link" href='{{post.url}}'>{{ post.title }}</a></h2>
+                  <p>{{ post.content | truncatewords: 70 }}</p>
+
+                  <hr>
+
+                  <ul class="tag_list">
+                    {% for tag in post.tags %}
+                    <li class="inline archive_list"><a class="tag_list_link" href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </article>
+    </div>
+  </div>
+</div>

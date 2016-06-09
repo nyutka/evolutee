@@ -1,0 +1,29 @@
+---
+---
+	{% for post in  paginator.posts %}
+	<article class="post">
+		<h2><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a></h2>
+		<time datetime="{{ post.date | date_to_long_string }}"><a href="{{ post.url | prepend:site.baseurl }}">{{ post.date | date_to_long_string }}</a></time>
+		<p>{{ post.excerpt }}</p>
+		<a href="{{ post.url | prepend:site.baseurl }}" class="btn btn-default">read more</a>
+
+		<ul class="social-network">
+			<li><a href="#" class="btn-facebook">
+				<i class="icon icons-facebook"></i>
+				<span class="btn-count">1K</span>
+			</a></li>
+			<li><a href="#" class="btn-twitter">
+				<i class="icon icons-twitter"></i>
+				<span class="btn-count">535</span>
+			</a></li>
+			<li><a href="#" class="btn-google">
+				<i class="icon icons-google"></i>
+				<span class="btn-count">28</span>
+			</a></li>
+		</ul>
+	</article>
+	{% endfor %}
+
+	{% if (paginator.next_page != nil) %}
+	<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.next_page }}" class="load-more"></a>
+	{% endif %}
